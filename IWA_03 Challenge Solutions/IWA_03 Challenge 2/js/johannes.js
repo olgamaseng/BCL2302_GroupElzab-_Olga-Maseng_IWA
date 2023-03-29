@@ -1,4 +1,3 @@
-
 // johannes.js
 
 const firstname = "Johannes"
