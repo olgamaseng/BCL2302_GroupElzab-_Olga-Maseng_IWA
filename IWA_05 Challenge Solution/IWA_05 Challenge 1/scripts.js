@@ -45,7 +45,7 @@ if (shoes + batteries + pens + shirts + toys  > 1000 ) {
 
 	console.log('price', currency, shoes + batteries + toys + shipping)
 	
-if (shipping = 0 && customers === 1) {
+if (shipping = 0 && customers !== 1) {
 	 console.log (FREE_WARNING) 
 	}
 
