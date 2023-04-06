@@ -17,7 +17,7 @@ const leo = {
 	name: leoName,
     age:  24,
     accessid: '47afb389-8014-4d0b-aff3-e40203d2107f',
-	balance: 'R' +  (leoBalance * -1).toFixed(2),
+	balance: parseInt(leoBalance * -1),
 	address:  {
 		number:  leoNumber,
 		street:  leoStreet,
@@ -26,10 +26,10 @@ const leo = {
 }
 
 const sarah = {
-	name:  sarahName+sarahSurname,
+	name:  sarahName + sarahSurname,
 	age:  62,
 	accessid:  '6b279ae5-5657-4240-80e9-23f6b635f7a8',
-	balance:  'R' + (sarahBalance* -1).toFixed(2),
+	balance:    parseInt(sarahBalance* -1),
 	address:  {
 		number:  sarahNumber,
 		street:  sarahStreet,
@@ -46,5 +46,6 @@ Changed access id to accessId to make it a valid variable name.
 Added a colon instead of an equals sign when defining properties in the objects.
 Enclosed the property names with quotes when they contained a hyphen, as in access id value.
 Added commas between properties in the objects.
-Added a missing comma after the balance property in the sarah object.
-Enclosed the address property names with square brackets in the console.log statements.*/
+ParseInt the balance to ensure it becomes a value.
+removed hyphen in access id and postalcode and made it one word to make it a variable name
+Removed the square brackets in the console.log statements and added . (dots).*/
