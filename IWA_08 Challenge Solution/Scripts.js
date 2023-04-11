@@ -17,7 +17,7 @@ const leo = {
 	name: leoName,
     age:  24,
     accessid: '47afb389-8014-4d0b-aff3-e40203d2107f',
-	balance: parseInt(leoBalance * -1),
+	balance: `R ${parseInt(leoBalance * -1)}`,
 	address:  {
 		number:  leoNumber,
 		street:  leoStreet,
@@ -29,7 +29,7 @@ const sarah = {
 	name:  sarahName + sarahSurname,
 	age:  62,
 	accessid:  '6b279ae5-5657-4240-80e9-23f6b635f7a8',
-	balance:    parseInt(sarahBalance* -1),
+	balance:   `R ${parseInt(sarahBalance* -1)}`,
 	address:  {
 		number:  sarahNumber,
 		street:  sarahStreet,
@@ -48,4 +48,5 @@ Enclosed the property names with quotes when they contained a hyphen, as in acce
 Added commas between properties in the objects.
 ParseInt the balance to ensure it becomes a value.
 removed hyphen in access id and postalcode and made it one word to make it a variable name
-Removed the square brackets in the console.log statements and added . (dots).*/
+Removed the square brackets in the console.log statements and added . (dots).
+Interpolated the balance so that I can get an R before the balance*/
