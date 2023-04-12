@@ -1,10 +1,6 @@
 const nickname= "Timmy";
 const firstname = "Timothy";
 
-console.log(`Good Morning, ${nickname}!`)
-console.log(`Good Morning, ${firstname}!`)
-console.log(null ?? 'Good Morning')
-
 //We have to change from quotes to template literals `` and add $ (valid identifier)
 
 
