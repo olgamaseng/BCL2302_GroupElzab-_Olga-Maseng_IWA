@@ -40,4 +40,4 @@ console.log(`R ${balance.toFixed(2)}`);
 Added 1- tax in () to allow the multiply sign to work as it should.
 Intepolated lodging and size by adding ``(backticks , $ and {curly brackets}) 
 Added starting after tax to minus from the salary to be able to get the amount remaining after calculating tax, also added large apartment using `backtikcs`.
-Added R  on the balance to give it a value and fixed it to 2 decimal numbers
+Added R on the balance to give it a value and fixed it to 2 decimal numbers*/
