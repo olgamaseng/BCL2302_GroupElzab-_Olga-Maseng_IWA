@@ -3,7 +3,7 @@
 
 // Order1
 
-const order1Root = document.querySelector('body > section:nth-child(3) > dl');
+const order1Root = document.querySelector('body > section:nth-child(3) > dl'); 
 
 const order1Biscuits = document.querySelector('body > section:nth-child(3) > dl > div.biscuits > dd'); 
 order1Biscuits.innerText = order1Root.dataset.biscuits ;
