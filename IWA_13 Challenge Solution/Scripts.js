@@ -6,8 +6,8 @@ let calculated = '1'
 
 //Remove the = after the const and add it as a declaration
 const logCalc = () => {
-    const isString = typeof calculated === Number // add == to make it a comparisson operator and remove number and the -
-    const calculatedAsNumber = isString ? calculated: parseInt(calculated)    // Remove ParseNumber and make it ParseInt instead to be able to change the value from a string to a number and move the calculated after the parseInt so that it is logged after 
+    const isString = typeof calculated === 'string' // add == to make it a comparisson operator and remove 'numerical-string' and added number and the -
+    const calculatedAsNumber = isString ?  parseInt(calculated): calculated    // Remove ParseNumber and make it ParseInt instead to be able to change the value from a string to a number and move the calculated after the parseInt so that it is logged after 
     calculated = calculatedAsNumber + 1 //remove == and make it a declaration instead of a comparisson operator
 }
 

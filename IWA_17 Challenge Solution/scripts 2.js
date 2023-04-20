@@ -6,7 +6,7 @@ In the internal function, you added a missing semicolon ; after the added variab
 
 function add(a, b ) { return a + b ;}
 
-function multiply(a, b) { return a * b  ;} //remove - sign and replace with * as the aim of this function is to multiply
+function multiply(a, b) { return a * b  ;} //remove - sign
 
 
 
@@ -16,9 +16,6 @@ function internal() {
 	console.log(multiplied)
 	
 }
-
-//changed multiply to multiplied as it was already used on the above function.
-//added the internal property so that the function can be able to be executed on both example1 and example 2. The aim of this function was to add a and b and multiply the answer by c, so that is what the multiplied function explains.
 
 // Not allowed to change below this
 

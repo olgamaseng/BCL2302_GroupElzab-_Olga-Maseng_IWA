@@ -32,7 +32,8 @@ const rent = {
 
 const taxAsDecimal = parseFloat(tax[913]) / 100;
 const startingAfterTax = salary * (1 - taxAsDecimal);
-const type = `${lodging}  ${size}`;
+const type = 
+`${lodging}  ${size}`;
 const balance = (startingAfterTax -expenses.transport - expenses.food - rent['large-apartment']);
 console.log(`R ${balance.toFixed(2)}`);
 
