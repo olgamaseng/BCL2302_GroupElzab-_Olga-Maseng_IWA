@@ -110,72 +110,28 @@ const data = {
 // document.querySelector(NM372).appendChild(createHtml(NM372));
 // document.querySelector(SV782).appendChild(createHtml(SV782));
 
-// Only edit below this comment
-  //Inserted an object as an input parameter and extracted firstName, surname, id and races using the destructuring assignment
-  //I.e. inserted all the info related to the athlete in the const, so that I can insert it in html as well
-  const createHtml = (athlete) => {
-    const { firstName, surname, id, races } = athlete;
-  
-    const latestRace = races[races.length - 1];
-    const { date, time } = latestRace;
-  //used the array-reverse method in time, so that it could display first - fourth
-    const [fourth, third, second, first] = time.reverse();
-    const total = first + second + third + fourth;
-    const hours = Math.floor(total / 60);
-    //used the modulus operator (%), which returns the remainder of an hour (60Min)
-    const minutes = total % 60;
+// Create HTML for each athlete
+Object.values(data.response.data).forEach((athlete) => {
+  const { firstName, surname, id, races } = athlete;
 
-    const months = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ]; 
-    const dateObj = new Date(date);
-    const day = dateObj.getDate();
-    const monthIndex = dateObj.getMonth();
-    const year = dateObj.getFullYear();
-    
-    const formattedDate = `${months[monthIndex]} ${day}, ${year}`;
-  
-    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-  
-    const section = document.querySelector(`[data-athlete="${id}"]`);
-    //created an element of (h2) for the id
-    const title = document.createElement('h2');
-    title.textContent = id;
-    section.appendChild(title);
-  
-    const list = document.createElement('dl');
-  
-    const fullnameTerm = document.createElement('dt');
-    fullnameTerm.textContent = 'Full Name';
-    const fullnameDef = document.createElement('dd');
-    fullnameDef.textContent = `${firstName} ${surname}`;
-    list.appendChild(fullnameTerm);
-    list.appendChild(fullnameDef);
-  
-    const racesTerm = document.createElement('dt');
-    racesTerm.textContent = 'Total Races';
-    const racesDef = document.createElement('dd');
-    racesDef.textContent = races.length;
-    list.appendChild(racesTerm);
-    list.appendChild(racesDef);
-  //created the label of the date needed using the (dt) element
-    const latestRaceTerm = document.createElement('dt');
-    latestRaceTerm.textContent = 'Event Date (Latest)';
-    //created the actual value of of the date needed using the (dd) element
-    const latestRaceDef = document.createElement('dd');
-    latestRaceDef.textContent = formattedDate;
-    list.appendChild(latestRaceTerm);
-    list.appendChild(latestRaceDef);
-  
-    const latestTimeTerm = document.createElement('dt');
-    latestTimeTerm.textContent = 'Total Time (Latest)';
-    const latestTimeDef = document.createElement('dd');
-    latestTimeDef.textContent = formattedTime;
-    list.appendChild(latestTimeTerm);
-    list.appendChild(latestTimeDef);
-  //used (appendChild) to synchronize dt and dd
-    section.appendChild(list);
-  };
-  
-  const athletes = Object.values(data.response.data);
-  athletes.forEach((athlete) => createHtml(athlete));
+  // Get the latest race
+  const [latestRace] = races.slice(-1);
+  const [time1, time2, time3, time4] = latestRace.time;
+  const latestRaceDate = new Date(latestRace.date);
+  const formattedDate = `${latestRaceDate.getDate()} ${MONTHS[latestRaceDate.getMonth()]} ${latestRaceDate.getFullYear()}`;
+  const totalRaceCount = races.length;
+  const totalTime = `${String(Math.floor((time1 + time2 + time3 + time4) / 60)).padStart(2, '0')}:${String((time1 + time2 + time3 + time4) % 60).padStart(2, '0')}`;
+
+  // Create the HTML elements
+  const section = document.querySelector(`[data-athlete="${id}"]`);
+  const title = document.createElement('h2');
+  const info = document.createElement('p');
+
+  // Set the text content of the HTML elements
+  title.textContent = `${firstName} ${surname}`;
+  info.textContent = `Latest race on ${formattedDate} - Total races: ${totalRaceCount} - Total time: ${totalTime}`;
+
+  // Add the HTML elements to the section
+  section.appendChild(title);
+  section.appendChild(info);
+});
