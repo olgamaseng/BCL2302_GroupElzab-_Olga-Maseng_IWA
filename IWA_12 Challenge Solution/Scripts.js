@@ -1,5 +1,3 @@
-// scripts.js
-
 const STATUS_MAP = {
     shelf: {
         color: 'green',
@@ -26,9 +24,10 @@ const STATUS_MAP = {
         canCheckIn: true,
     }
 }
-
-//Edit below line
-_____________________________________________________________________________________________________________________________________________
+/*
+* Edit below line
+*________________________________________________________________________________________________________________________________________________
+*/
 const book1 = {
     status: document.querySelector('#book1 .status'),
     reserve: document.querySelector('#book1 .reserve'),
@@ -52,15 +51,14 @@ const book1 = {
   book1.reserve.disabled = !STATUS_MAP.overdue.canReserve;
   book1.checkout.disabled = !STATUS_MAP.overdue.canCheckout;
   book1.checkin.disabled = !STATUS_MAP.overdue.canCheckIn;
-
   book2.checkin.style.filter = 'grayscale(100%)';
   book2.status.style.color = STATUS_MAP.reserved.color;
   book2.reserve.disabled = !STATUS_MAP.reserved.canReserve;
   book2.checkout.disabled = !STATUS_MAP.reserved.canCheckout;
   book2.checkin.disabled = !STATUS_MAP.reserved.canCheckIn;
-
   book3.checkin.style.filter = 'grayscale(100%)';
   book3.status.style.color = STATUS_MAP.shelf.color;
   book3.reserve.disabled = !STATUS_MAP.shelf.canReserve;
   book3.checkout.disabled = !STATUS_MAP.shelf.canCheckout;
   book3.checkin.disabled = !STATUS_MAP.shelf.canCheckIn;
+document.getElementById()
