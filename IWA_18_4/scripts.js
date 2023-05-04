@@ -108,13 +108,19 @@ html.add.overlay.close();
 //  const handleDelete = (event) => {
 //      html.delete.edit.overlay.style.display = '' 
 //  }
-const handleDelete = () => {
-    const idToBeDeleted = html.edit.id.value;
-    const orderToBeDeleted = document.querySelector(`[data-id="${idToBeDeleted}"]`);
-    orderToBeDeleted.remove();
+// const handleDelete = () => {
+//     const idToBeDeleted = html.edit.id.value;
+//     const orderToBeDeleted = document.querySelector(`[data-id="${idToBeDeleted}"]`);
+//     orderToBeDeleted.remove();
     
-  };
-
+//   };
+  // Delete the order element with the new data
+  const newOrder = createOrderHtml(order);
+  const oldOrder = document.querySelector(`[data-id="${id}"]`);
+  oldOrder.remove(newOrder);
+  html.edit.overlay.close();
+};
+html.edit.delete.addEventListener("click", handleDelete);
 html.add.cancel.addEventListener('click', handleAddToggleOff)
 
 html.other.add.addEventListener('click', handleAddToggle)
